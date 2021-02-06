@@ -12,7 +12,6 @@ export default class Apifeaturing{
     }
 
     searching(){
-        console.log(this.queryString)
         if(this.queryString.title)
             this.query = this.query.find({title: this.queryString.title})
 

@@ -1,1 +1,1 @@
-MERN stack blog app authentication , category , posts, search, filterin for category..,also boilerplate mern stack mongo db express mongoose react 
+MERN stack blog app authentication , category , posts, search, filterin for category..,also boilerplate mern stack, mongo db, express, mongoose, react ,react redux,redux-thunk 

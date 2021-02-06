@@ -1,0 +1,28 @@
+$bg-gradient: linear-gradient(to right, #ffefba, #ffffff);
+$font-family: 'Poppins', sans-serif;
+$text-color: #050609;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: $font-family;
+}
+
+body {
+    background-image: $bg-gradient;
+}
+
+a{
+    font-weight: 500;
+    color: lighten($text-color, 30) !important;
+
+    &:hover,
+    &:focus {
+        color: $text-color !important;
+    }
+}
+
+

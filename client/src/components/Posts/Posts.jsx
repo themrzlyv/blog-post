@@ -1,9 +1,8 @@
 import React,{useState,useEffect} from 'react'
-import Post from '../../components/Post/Post'
+import Post from '../Post/Post'
 import { useSelector } from "react-redux";
 import { getAllPosts } from '../../store/Actions/postActions';
 import { useDispatch } from "react-redux";
-import Filterbox from '../../components/Filterbox/Filterbox';
 import Loader from '../../components/Loader/Loader';
 
 const Posts = () => {
@@ -20,11 +19,6 @@ const Posts = () => {
             <div className="row">
                 <div className="col-lg-12  mt-4">
                     <h4 className="h4 fw-bolder fs-4">Blog Articles</h4>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-lg-12  mt-4">
-                    <Filterbox />
                 </div>
             </div>
             <div className="row">

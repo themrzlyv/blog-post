@@ -1,6 +1,7 @@
-$bg-gradient: linear-gradient(to right, #ffefba, #ffffff);
+$bg-gradient: linear-gradient(to right, #a8ff78, #78ffd6);
 $font-family: 'Poppins', sans-serif;
 $text-color: #050609;
+$bg-color: #F1E9DB;
 
 *{
     margin: 0;
@@ -12,7 +13,7 @@ $text-color: #050609;
 }
 
 body {
-    background-image: $bg-gradient;
+    background: $bg-color;
 }
 
 a{
@@ -23,6 +24,11 @@ a{
     &:focus {
         color: $text-color !important;
     }
+}
+
+button:focus,
+button:hover {
+    box-shadow: none !important;
 }
 
 

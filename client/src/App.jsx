@@ -1,9 +1,15 @@
 import React, { useEffect } from 'react'
+import {useDispatch} from 'react-redux'
 import {BrowserRouter as Router} from 'react-router-dom'
 import Navi from './components/Navbar/Navi'
 import Mainpages from './pages/MainPages'
+import { getUser } from './store/Actions/useAction'
 
 const App = () => {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(getUser())
+    }, [])
     return (
         <Router>
             <div className="container-fluid">

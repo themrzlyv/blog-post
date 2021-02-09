@@ -10,10 +10,10 @@ export const register = async (req,res) => {
         const {name,email,password} = req.body
 
         const msg = validator(email,password)
-        if(msg) return res.status(400).json({err: msg})
+        if(msg) return res.status(400).json({error: msg})
 
         const user = await User.findOne({email})
-        if(user) return res.status(400).json({err: "This user is already exists"})
+        if(user) return res.status(400).json({error: "This user is already exists"})
 
         const passwordhash = await bcrypt.hash(password, 12)
         const newuser = await User({
@@ -32,10 +32,10 @@ export const register = async (req,res) => {
         })
 
 
-        res.status(200).json({accesstoken})
+        res.status(200).json(accesstoken)
 
     } catch (error) {
-        return res.status(500).json({err: error})
+        return res.status(500).json({error: error})
     }
 }
 
@@ -47,10 +47,10 @@ export const login = async (req,res) => {
         if(msg) return res.status(400).json({err: msg})
 
         const user = await User.findOne({email})
-        if(!user) return res.status(400).json({err: "This user does not exists"})
+        if(!user) return res.status(400).json({error: "This user does not exists"})
 
         const isMatch = await bcrypt.compare(password,user.password)
-        if(!isMatch) return res.status(400).json({err: "Password is not valid"})
+        if(!isMatch) return res.status(400).json({error: "Password is not valid"})
 
 
         // If login success , create access token and refresh token
@@ -62,18 +62,18 @@ export const login = async (req,res) => {
             maxAge: 7*24*60*60*1000 
         })
 
-        res.json({accesstoken})
+        res.json(accesstoken)
     } catch (error) {
-        return res.status(500).json({err: error})
+        return res.status(500).json({error: error})
     }
 }
 
 export const Logout = async (req,res) => {
     try {
-        res.clearCookie('refreshtoken', {path: '/user/refresh_token'})
+        res.clearCookie('refreshtoken')
         return res.json({msg: "Logged out"})
-    } catch (err) {
-        return res.status(500).json({msg: err.message})
+    } catch (error) {
+        return res.status(500).json({msg: error.message})
     }
 }
 
@@ -88,11 +88,11 @@ export const refreshToken = async(req,res) => {
 
             const accesstoken = createAccessToken({id: user.id})
 
-            res.json({accesstoken})
+            res.json(accesstoken)
         })
 
-    } catch (err) {
-        return res.status(500).json({msg: err.message})
+    } catch (error) {
+        return res.status(500).json({msg: error.message})
     }
 }
 
@@ -102,7 +102,7 @@ export const getUser = async(req,res) => {
         if(!user) return res.status(400).json({msg: "User does not exist."})
 
         res.status(200).json(user)
-    } catch (err) {
-        return res.status(500).json({msg: err.message})
+    } catch (error) {
+        return res.status(500).json({msg: error.message})
     }
 }

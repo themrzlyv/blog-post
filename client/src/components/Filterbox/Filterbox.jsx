@@ -35,21 +35,11 @@ const Filterbox = () => {
     return (
         <div className='container'>
             <div className="row">
-                <div className="col-lg-12 p-0">
+                <div className="col-lg-8 mx-auto p-0">
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3 d-flex align-items-center">
-                            <input
-                            onChange={(e) => setsearchbox(e.target.value)}
-                            type="text"
-                            className="form-control bg-transparent "
-                            placeholder="Search..." />
-                            <button
-                            type='submit'
-                            className='btn btn-info'>
-                                Search
-                            </button>
-                            <div className="dropdown">
-                                <a className="btn dropdown-toggle" role="button" id="category" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div className="dropdown mx-2">
+                                <a className="btn dropdown-toggle fw-bold" role="button" id="category" data-bs-toggle="dropdown" aria-expanded="false">
                                     Category
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="category">
@@ -64,6 +54,17 @@ const Filterbox = () => {
                                     }
                                 </ul>
                             </div>
+                            <input
+                            onChange={(e) => setsearchbox(e.target.value)}
+                            type="text"
+                            className="form-control bg-transparent border-dark"
+                            placeholder="Search..." />
+                            <button
+                            type='submit'
+                            className='btn d-flex align-items-center'>
+                                <i className="fas fa-search mx-1"></i>
+                                Search
+                            </button>
                         </div>
                     </form>
                 </div>

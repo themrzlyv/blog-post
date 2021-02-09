@@ -1,0 +1,30 @@
+$bg-gradient: linear-gradient(to right, #134e5e, #71b280);
+
+
+.container {
+    background-image: url('https://res.cloudinary.com/themrzlyv/image/upload/v1612799126/camille-tinon-l7ALgRSJSjM-unsplash_twmnsr.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain;
+    height: 70vh;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 4px;
+
+
+    .textcontent {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h4 {
+            text-align: right;
+            font-weight: 600;
+            font-size: 2em;
+            margin-top: 5em;
+            color: #474973;
+            text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+                        0px -4px 10px rgba(255,255,255,0.3);
+        }
+    }
+}

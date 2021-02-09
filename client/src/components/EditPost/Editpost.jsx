@@ -86,8 +86,14 @@ const Editpost = ({data}) => {
                     </div>
 
                     <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" className="btn btn-primary">Save changes</button>
+                        <button type="button" className="btn m-0 d-flex align-items-center" data-bs-dismiss="modal">
+                            Back
+                            <i className="far mx-1 fa-hand-point-left"></i>
+                        </button>
+                        <button type="submit" className="btn m-0 d-flex align-items-center">
+                            Save
+                            <i className="far fa-check-circle mx-1"></i>
+                        </button>
                     </div>
 
                 </form> 

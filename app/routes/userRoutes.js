@@ -8,7 +8,7 @@ userRouter.post("/register", register)
 userRouter.post("/login", login)
 
 userRouter.get("/refresh_token" , refreshToken)
-userRouter.get("/logout", Logout)
+userRouter.delete("/logout", Logout)
 
 
 userRouter.get("/info" , Auth ,getUser)

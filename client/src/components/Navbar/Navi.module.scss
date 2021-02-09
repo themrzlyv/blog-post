@@ -4,8 +4,8 @@ $text-color: #050609;
     
 
     .container {
-        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-        border-radius: 4px;
+        // box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        // border-radius: 4px;
         
         .brand{
             color: $text-color !important;
@@ -17,9 +17,12 @@ $text-color: #050609;
     
     
         .navbarlink {
-            letter-spacing: 0.2px;
-            text-transform: lowercase;
+            letter-spacing: 0.1px;
             font-size: 1.1em !important;
+
+            &:focus {
+                box-shadow: none !important;
+            }
         }
     }
 }

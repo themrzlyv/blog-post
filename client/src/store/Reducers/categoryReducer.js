@@ -1,8 +1,6 @@
 import * as types from '../Actions/ActionTypes'
 
-const initialState = {
-
-}
+const initialState = {}
 
 
 const categoryReducer = (state=initialState, action) => {

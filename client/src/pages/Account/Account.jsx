@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useDispatch,useSelector} from 'react-redux'
-import CreateCategory from '../../components/Category/CreateCategory'
-import CreatePost from '../../components/CreatePost/CreatePost'
 import User from '../../components/User/User'
+import { getAllCategories } from '../../store/Actions/categoryAction'
+import { getAllPosts } from '../../store/Actions/postActions'
 import styles from './Account.module.scss'
 
 const Account = () => {
     const dispatch = useDispatch()
     const user = useSelector(state=>state.user.user)
-    console.log(user)
+    useEffect(() => {
+        dispatch(getAllCategories())
+        dispatch(getAllPosts())
+    }, [])
     return (
         <div className={`container ${styles.container}`}>
             <div className="row">
@@ -28,7 +31,7 @@ const Account = () => {
                     <User />
                 </div>
                 <div className="col-lg-5">
-                    <CreatePost />
+                    Last posts
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import {useDispatch,useSelector} from 'react-redux'
+import Categories from '../Category/Categories'
 
 const User = () => {
     const user = useSelector(state=>state.user.user)
@@ -18,8 +19,8 @@ const User = () => {
                                 {user.email}
                             </p>
                             <button href="#" className="btn ">Edit Account</button>
-                            <button href="#" className="btn ">Category</button>
-                            <button href="#" className="btn ">My Posts</button>
+                            <Categories />
+                            <button href="#" className="btn ">Create new post</button>
                         </div>
                     </div>
                 )

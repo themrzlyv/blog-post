@@ -16,7 +16,7 @@ body {
     background: $bg-color;
 }
 
-a{
+.btn, a{
     font-weight: 500;
     color: lighten($text-color, 30) !important;
 
@@ -26,9 +26,26 @@ a{
     }
 }
 
-button:focus,
-button:hover {
+.btn:focus,
+.btn:hover {
+    outline: none!important;
     box-shadow: none !important;
 }
 
+.dropdown-item.active, .dropdown-item:active {
+    background: none;
+}
+
+input, textarea, select {
+    border: none !important;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
 

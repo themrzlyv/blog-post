@@ -70,11 +70,6 @@ const PostDetail = () => {
                                         </div>
                                     </div>
 
-                                    {/* <a onClick={handleDelete} className="btn">
-                                        <i className="fas fa-trash mx-1"></i>
-                                        Delete
-                                    </a> */}
-
                                     <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#deleteItem">
                                         <i className="fas fa-recycle mx-1"></i>
                                         Remove
